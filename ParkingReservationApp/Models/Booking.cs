@@ -6,6 +6,6 @@ public class Booking
     public int ParkingSpaceId { get; set; }
     public int ParkingStructureId { get; set; }
 
-    public Bookee Bookee { get; set; }
-    public ParkingSpace ParkingSpace { get; set; }
+    public Bookee? Bookee { get; set; }
+    public ParkingSpace? ParkingSpace { get; set; }
 }
