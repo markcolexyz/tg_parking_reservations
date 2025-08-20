@@ -1,6 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Employee
 {
-    // In the schema, this is a STRING, so we'll use string type here.
+    [Column("employeeid")]
     public string? EmployeeId { get; set; }
+    [Column("contact_id")]
+    public int ContactId { get; set; }    
     public Contact? Contact { get; set; }
 }
