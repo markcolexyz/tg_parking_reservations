@@ -5,6 +5,8 @@ public class Employee
     [Column("employeeid")]
     public string? EmployeeId { get; set; }
     [Column("contact_id")]
-    public int ContactId { get; set; }    
+    public int ContactId { get; set; }      
+    [Column("password")]
+    public string? Password { get; set; }
     public Contact? Contact { get; set; }
 }
