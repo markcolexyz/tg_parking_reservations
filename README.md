@@ -42,10 +42,10 @@ cd tg_parking_reservations\ParkingReservationApp\scripts
 
 .\parking_reservation_api_test.ps1
 
-There are tests to test:
+There are the following tests to run:
 - valid and invalid logins
 - available slots on a specific date and date range
-- successful and unsuccessfull bookings
+- successful and unsuccessful bookings
 
 💡 If you get a permission error, run:
 
