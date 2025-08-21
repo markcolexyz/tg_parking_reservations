@@ -1,6 +1,6 @@
 @ParkingReservationApp_HostAddress = http://localhost:5166
 
-GET {{ParkingReservationApp_HostAddress}}/weatherforecast/
+GET {{ParkingReservationApp_HostAddress}}/api/Parking/availability
 Accept: application/json
 
 ###
