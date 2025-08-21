@@ -17,6 +17,16 @@ git clone https://github.com/markcolexyz/tg_parking_reservations.git
 
 cd tg_parking_reservations
 
+### 2. Build the Solution/Project
+
+dotnet build
+
+### 3. Run the Project
+
+cd ParkingReservationApp
+
+dotnet run
+
 ## 🧪 Testing the API
 
 There are 3 API endpoints to test.
