@@ -39,6 +39,7 @@ There are 3 API endpoints to test.
 There is a Powershell script in the project folder:
 
 cd tg_parking_reservations\ParkingReservationApp\scripts
+
 .\parking_reservation_api_test.ps1
 
 There are tests to test:
