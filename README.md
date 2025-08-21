@@ -14,6 +14,7 @@ Make sure the following are installed:
 ### 1. Clone the Repository
 
 git clone https://github.com/markcolexyz/tg_parking_reservations.git
+
 cd tg_parking_reservations
 
 ## 🧪 Testing the API
@@ -26,6 +27,7 @@ There are 3 API endpoints to test.
 
 ✅ Option 1: PowerShell Script
 There is a Powershell script in the project folder:
+
 cd tg_parking_reservations\ParkingReservationApp\scripts
 .\parking_reservation_api_test.ps1
 
@@ -40,7 +42,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ✅ Option 2: Swagger UI
 - Open your browser and navigate to:
-http://localhost:5000/swagger
+http://localhost:5166/swagger
 - Use the interactive interface to test endpoints
 
 
