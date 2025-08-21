@@ -1,6 +1,3 @@
-# tg_parking_reservations
-Technical Test for Tony Gee and Partners
-
 # 🚀 Parking Reservation API Setup & Testing Guide
 
 ## 📦 Requirements
