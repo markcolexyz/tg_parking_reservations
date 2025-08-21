@@ -73,6 +73,23 @@ public class ParkingController : ControllerBase
             return Conflict("Parking space is already booked for the selected date.");
         }
 
+        var isValidSpace = await _context.ParkingSpaces
+            .AnyAsync(ps => ps.ParkingSpaceId == bookingRequest.ParkingSpaceId &&
+                            ps.ParkingStructureId == bookingRequest.ParkingStructureId);
+
+        if (!isValidSpace)
+        {
+            return BadRequest("Invalid parking space.");
+        }
+
+        var isValidBookee = await _context.Bookees
+            .AnyAsync(b => b.BookeeId == bookingRequest.BookeeId);
+
+        if (!isValidBookee)
+        {
+            return BadRequest("Invalid bookee.");
+        }
+
         var booking = new Booking
         {
             BookeeId = bookingRequest.BookeeId,
