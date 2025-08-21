@@ -60,22 +60,31 @@ public class ParkingController : ControllerBase
     }
 
     [HttpPost("book")]
-    public async Task<IActionResult> CreateBooking([FromBody] Booking booking)
+    public async Task<IActionResult> CreateBooking([FromBody] BookingRequest bookingRequest)
     {
         // Check if parking space is available for requested date
         var existingBooking = await _context.Bookings
-            .AnyAsync(b => b.ParkingSpaceId == booking.ParkingSpaceId &&
-                           b.ParkingStructureId == booking.ParkingStructureId &&
-                           b.DateOfBooking.Date == booking.DateOfBooking.Date);
+            .AnyAsync(b => b.ParkingSpaceId == bookingRequest.ParkingSpaceId &&
+                           b.ParkingStructureId == bookingRequest.ParkingStructureId &&
+                           b.DateOfBooking.Date == bookingRequest.DateOfBooking.Date);
 
         if (existingBooking)
         {
             return Conflict("Parking space is already booked for the selected date.");
         }
 
+        var booking = new Booking
+        {
+            BookeeId = bookingRequest.BookeeId,
+            ParkingSpaceId = bookingRequest.ParkingSpaceId,
+            ParkingStructureId = bookingRequest.ParkingStructureId,
+            DateOfBooking = bookingRequest.DateOfBooking.Date
+        };
+
         _context.Bookings.Add(booking);
         await _context.SaveChangesAsync();
-        return Ok(new { message = "Booking created successfully", id = booking.BookingId });
+
+        return Ok(new { message = "Booking created successfully", bookingId = booking.BookingId });
     }
 
 }
