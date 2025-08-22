@@ -13,19 +13,17 @@ Make sure the following are installed:
 
 ### 1. Clone the Repository
 
-git clone https://github.com/markcolexyz/tg_parking_reservations.git
-
-cd tg_parking_reservations
+<pre><code class="language-bash">git clone https://github.com/markcolexyz/tg_parking_reservations.git
+cd tg_parking_reservations</code></pre>
 
 ### 2. Build the Solution/Project
 
-dotnet build
+<pre><code class="language-bash">dotnet build</code></pre>
 
 ### 3. Run the Project
 
-cd ParkingReservationApp
-
-dotnet run
+<pre><code class="language-bash">cd ParkingReservationApp
+dotnet run</code></pre>
 
 ### 4. The API will launch at: 
 
@@ -42,33 +40,32 @@ There are 3 API endpoints to test.
 ✅ Option 1: PowerShell Script
 There is a Powershell script in the project folder:
 
-cd tg_parking_reservations\ParkingReservationApp\scripts
-
-.\parking_reservation_api_test.ps1
+<pre><code class="language-bash">cd tg_parking_reservations\ParkingReservationApp\scripts
+.\parking_reservation_api_test.ps1</code></pre>
 
 Run the tests individually from the command line as follows:
 - Login Test 1 - Incorrect Username
-powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'XYZ' -password 'password123'"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'XYZ' -password 'password123'"</code></pre>
 - Login Test 2 - Incorrect Password	
-powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'ATH' -password 'letmein789'"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'ATH' -password 'letmein789'"</code></pre>
 - Login Test 3 - Correct Username and Password
-powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'ATH' -password 'password123'"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Login -employeeId 'ATH' -password 'password123'"</code></pre>
 - Availability Test 1 - Single date
-powershell -Command ". .\parking_reservation_api_test.ps1; Get-AvailableSlots -dateFrom '2025-04-29'"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Get-AvailableSlots -dateFrom '2025-04-29'"</code></pre>
 - Availability Test 2 - Date range
-powershell -Command ". .\parking_reservation_api_test.ps1; Get-RangedSlots -dateFrom '2025-04-23' -dateTo '2025-04-30'"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Get-RangedSlots -dateFrom '2025-04-23' -dateTo '2025-04-30'"</code></pre>
 - Booking a slot Test 1 - Invalid parking space Id
-powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 101 -bookeeId 1"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 101 -bookeeId 1"</code></pre>
 - Booking a slot Test 2 - Unavailable space
-powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-04-29' -parkingSpaceId 1 -bookeeId 1"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-04-29' -parkingSpaceId 1 -bookeeId 1"</code></pre>
 - Booking a slot Test 3 - Invalid Bookie Id
-powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 2 -bookeeId 77"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 2 -bookeeId 77"</code></pre>
 - Booking a slot Test 3 - Available space, valid space Id & valid Bookie Id
-powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 1 -bookeeId 1"
+<pre><code class="language-powershell">powershell -Command ". .\parking_reservation_api_test.ps1; Create-Booking -dateOfBooking '2025-08-22' -parkingSpaceId 1 -bookeeId 1"</code></pre>
 
 💡 If you get a permission error, run:
 
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+<pre><code class="language-powershell">Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
 
 ✅ Option 2: Swagger UI
 - Open your browser and navigate to:
