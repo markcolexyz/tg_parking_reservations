@@ -133,18 +133,31 @@ function Create-Booking {
 # Sample usage
 
 # Logins
-Login -employeeId "XYZ" -password "password123"  # Incorrect Username
-Login -employeeId "ATH" -password "letmein789"   # Incorrect Password
-Login -employeeId "ATH" -password "password123"  # Correct Username and Password
+#Write-Host "Login Test 1 - Incorrect Username"
+#Login -employeeId "XYZ" -password "password123"  # Incorrect Username
+
+#Write-Host "Login Test 2 - Incorrect Password"
+#Login -employeeId "ATH" -password "letmein789"   # Incorrect Password
+
+#Write-Host "Login Test 3 - Correct Username and Password"
+#Login -employeeId "ATH" -password "password123"  # Correct Username and Password
 
 # Availability
-Get-AvailableSlots -dateFrom "2025-04-29" # Single date
+#Write-Host "Availability Test 1 - Single date [2025-04-29]"
+#Get-AvailableSlots -dateFrom "2025-04-29" # Single date
 
-Get-RangedSlots -dateFrom "2025-04-23" -dateTo "2025-04-30" # Date range
-Get-RangedSlots -dateFrom "2025-05-01" -dateTo "2025-05-07" # Date range
+#Write-Host "Availability Test 2 - Date range [2025-04-23 - 2025-04-30]"
+#Get-RangedSlots -dateFrom "2025-04-23" -dateTo "2025-04-30" # Date range
+
+#Write-Host "Availability Test 3 - Date range [2025-05-01 - 2025-05-07]"
+#Get-RangedSlots -dateFrom "2025-05-01" -dateTo "2025-05-07" # Date range
 
 # Booking
-Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 101 -bookeeId 1 # Invalid space
-Create-Booking -dateOfBooking "2025-04-29" -parkingSpaceId 1 -bookeeId 1 # Unavailable space
-Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 2 -bookeeId 77 # Invalid BookieId
-Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 1 -bookeeId 1 # Available space
+#Write-Host "Booking a slot Test 1 - Invalid parking space Id"
+#Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 101 -bookeeId 1 # Invalid space
+#Write-Host "Booking a slot Test 2 - Trying to book a space that is already reserved"
+#Create-Booking -dateOfBooking "2025-04-29" -parkingSpaceId 1 -bookeeId 1 # Unavailable space
+#Write-Host "Booking a slot Test 3 - Invalid Bookie Id"
+#Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 2 -bookeeId 77 # Invalid BookieId
+#Write-Host "Booking a slot Test 4 - Available space, valid space Id & valid BookieId"
+#Create-Booking -dateOfBooking "2025-08-22" -parkingSpaceId 1 -bookeeId 1 # Available space
